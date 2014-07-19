@@ -60,7 +60,7 @@ public class Application extends Controller {
 	    			String userId = userDAO.fetchUserId(emailId);
 	    			userAccessDAO.removeAccessToken(userId);
 	    			userAccessDAO.createAccessToken(userId);
-	    			return ok("Logged in sucessfully....");
+	    			return ok("Logged in sucessfully...." + userId + " " + userAccessDAO.fetchAccessToken(userId));
 	    		}
 	    		else
 	    			return ok("Incorrect Password....");
